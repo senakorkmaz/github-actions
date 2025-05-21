@@ -1,0 +1,16 @@
+name: Issues 
+on: [issues] 
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print issue
+      run: |
+        echo "Issue title: ${{ github.event.issue.title }}"
+        echo "Issue body: ${{ github.event.issue.body }}"
+        echo "Issue number: ${{ github.event.issue.number }}"
+        echo "Issue state: ${{ github.event.issue.state }}"
+        echo "Issue user: ${{ github.event.issue.user.login }}"
+        echo "Issue created at: ${{ github.event.issue.created_at }}"
+        echo "Issue updated at: ${{ github.event.issue.updated_at }}"
+    
